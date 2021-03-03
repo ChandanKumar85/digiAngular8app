@@ -1,0 +1,18 @@
+<div class="page-title aboutus-sec pt-4 pb-4 dark_bg" style="margin-top: 111px;">
+    <div class="container">
+       <h1><span>OUR</span> Team</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row padding-top-bottom-50">
+        <div class="col-sm-12 text-center profile_pic-sec" *ngFor="let conten of our_team" [innerHTML]="conten.body"></div>
+    </div>
+    <div class="row profile d-flex justify-content-center padding-top-bottom-50 pt-0">
+        <div class="col-6 col-sm-3 col-md-3 col-lg-3 mb-4" *ngFor="let team of our_team_page">
+            <figure><img src="{{team.field_our_team_image}}" width="192" height="231" class="img-fluid" alt="{{team.name}}"></figure>
+        </div>
+    </div>
+</div>
+
+<app-footer-top></app-footer-top>

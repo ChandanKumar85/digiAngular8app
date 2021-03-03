@@ -1,0 +1,14 @@
+<header class="header">
+    <div class="hdr-top-bar">
+        <div class="container d-flex justify-content-between">
+            <ul class="list-unstyled list-inline d-flex m-0 contact-top">
+                <li class="mr-2" *ngFor="let linkf of top_header_contact"><i class="fa fa-{{linkf.field_icon_name}}"></i> <a href="{{linkf.field_for_type}}:{{linkf.field_header_email}}">{{linkf.field_header_email}}</a>
+            </ul>
+            <ul class="list-unstyled list-inline social-icn m-0 d-flex">
+                <li *ngFor="let linkf of social_media" class="{{linkf.field_icon_class_name}} ml-1"><a href="{{linkf.field_social_media_url}}" target="_blank"><i class="fa fa-{{linkf.field_icon_class_name}}"></i></a></li>
+                <li class="glassdor ml-1"><a target="_blank" href="https://www.glassdoor.co.in/Reviews/Digitigi-Reviews-E1651886.htm"><img alt="Glassdoor-logo-icon" src="https://www.digitigi.com/assets/img/glassdoor.svg"></a></li>
+            </ul>
+        </div>
+    </div>
+    <app-navigation></app-navigation>
+</header>

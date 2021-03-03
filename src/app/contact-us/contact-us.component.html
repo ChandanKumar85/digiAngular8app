@@ -1,0 +1,108 @@
+<div class="page-title aboutus-sec pt-4 pb-4 dark_bg" style="margin-top: 111px;">
+    <div class="container">
+       <h1><span>Contact</span> Us</h1>
+    </div>
+</div>
+
+<div class="container full padding-top-bottom-50">
+    <div class="row">
+        <div class="col-sm-8 con_left">
+            <div class="row con_left_client paragraph">
+                <div class="col-sm-4" *ngFor="let cont of contact_us_top_details">
+                   <div class="con-part">
+                      <h3>{{cont.title}}</h3>
+                      <ul>
+                         <li [innerHTML]="cont.body"></li>
+                         <li>
+                            <p> <a href="tel:{{cont.field_contact_number}}" target="_blank"> <i class="fa fa-phone call_action"></i>{{cont.field_contact_number}}</a></p>
+                         </li>
+                         <li>
+                            <a href="mailto:{{cont.field_email_id}}"> <i class="fa fa-envelope"></i>{{cont.field_email_id}}</a>
+                         </li>
+                      </ul>
+                   </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row con_left_client paragraph">
+                <div class="col-sm-4">
+                   <div class="con-part">
+                      <h3>Visit us</h3>
+                      <ul>
+                         <li class="d-flex"><span class="fa fa-map-marker pt1"></span>
+                            <div *ngFor="let cont of foo_contD" [innerHTML]="cont.body"></div>
+                         </li>
+                      </ul>
+                   </div>
+                </div>
+            </div>
+            <div class="map mt-4">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.2257799916074!2d77.07285441507766!3d28.412443382505206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1946ca7b7fd5%3A0x6d0eb9f71323d357!2sDigitigi+Technologies!5e0!3m2!1sen!2sin!4v1559301285180!5m2!1sen!2sin" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+            <!-- *ngFor="let cont of contact_google_map" [innerHTML]="cont.body" -->
+            </div>
+        </div>
+        <div class="col-sm-4 d-flex align-items-stretch">
+            <div class="contact_form_right">
+               <h3><i class="fa fa-envelope"></i> Write to us:</h3>
+               <form #userForm="ngForm" *ngIf="!submitted" (ngSubmit)="onSubmit(userForm.value)">
+                  <div class="form-group">
+                     <label><i class="fa fa-user prefix"></i> Full Name</label><!-- <b>{{nameRef.className}}</b> -->
+                     <input type="text" class="form-control" name="fullname" #nameRef="ngModel" required ngModel>
+                     <div [hidden]="nameRef.valid || nameRef.pristine" class="alert-danger">
+                        Please Enter a Name.
+                     </div>
+                  </div>
+                  <div ngModelGroup="contactDetail">
+                     <div class="form-group">
+                        <label><i class="fa fa-envelope prefix"></i> Email</label>
+                        <input type="email" class="form-control" name="email" #emailRef="ngModel" required ngModel [email]="true">
+                        <div [hidden]="emailRef.valid || emailRef.pristine" class="alert-danger">
+                           Please Enter Valid Email Id.
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <label><i class="fa fa-phone prefix"></i> Phone No.</label>
+                        <input type="text" class="form-control" name="mobile" [pattern]="'[789][0-9]{9}'" #phoneRef="ngModel" required ngModel  minlength="10" maxlength="10">
+                        <div [hidden]="phoneRef.valid || phoneRef.pristine" class="alert-danger">
+                           Please Enter Contact No.
+                        </div>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label><i class="fa fa-pencil prefix"></i> Message</label>
+                     <textarea class="form-control" name="message" #messageRef="ngModel" required ngModel></textarea>
+                     <div [hidden]="messageRef.valid || messageRef.pristine" class="alert-danger">
+                        Message is required.
+                     </div>
+                  </div>
+                  <div class="text-center">
+                     <button [disabled]="!userForm.form.valid" type="submit" name="contactsubmit" class="btn btn-outline">Submit</button>
+                     <div class="call mt-3">
+                         <p>Or would you prefer to call? <br /><span><i class="fa fa-phone"></i> <a class="callc" *ngFor="let linkf of top_header_contact"href="{{linkf.field_for_type}}:{{linkf.field_header_email}}">{{linkf.field_header_email}}</a> </span></p>
+                     </div>
+                 </div>
+               </form>
+               <div [hidden]="!submitted" class="contact-message text-center paragraph p-5">
+                  <!-- <div *ngIf="userForm" class="contact-sucess paragraph">
+                     <p>Contact Form has been successfully submitted.</p>
+                  </div> -->
+                  <h2 class="alert alert-success">Successfully Submitted!</h2>
+                  <p>An expert will get in touch with you shortly</p>
+                  <a routerLink="/" class="btn btn-outline">Go to Home</a>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="parallax-s-about padding-top-bottom-50" style="background-image: url(../assets/file/contact-bg.jpg);">
+    <div class="parallax-social-services parallax-co">
+       <div class="container">
+         <h5>CONNECT WITH US</h5>
+         <ul class="social-nav d-flex justify-content-center">
+            <li *ngFor="let linkf of social_media"><a class="{{linkf.field_icon_class_name}}" href="{{linkf.field_social_media_url}}" target="_blank"><i class="fa fa-{{linkf.field_icon_class_name}}"></i></a></li>
+            <li><a href="https://www.glassdoor.co.in/Reviews/Digitigi-Reviews-E1651886.htm" target="_blank" title="Glassdoor" rel="nofollow" class="glassdoor"><img alt="Glassdoor-logo-icon" src="../assets/images/glassdoor.svg"></a></li>        
+         </ul>
+       </div>
+    </div>
+</div>

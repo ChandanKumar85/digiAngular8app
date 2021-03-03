@@ -1,0 +1,29 @@
+header.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+header.header .hdr-top-bar {
+    background: red;
+    color: #fff;
+}
+header.header .hdr-top-bar .contact-top { top: 2px; position: relative;}
+header.header .hdr-top-bar a { display: inline-block; padding: 5px; color: #fff; font-size: 14px;}
+header.header .hdr-top-bar .social-icn a { padding: 5px 0; width: 40px; font-size: 18px; text-align: center; position: relative; z-index: 1;}
+header.header .hdr-top-bar .social-icn li { position: relative;}
+header.header .hdr-top-bar .social-icn li:after {
+    content: "";
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    width: 100%;
+    height: 0%;
+    left: 0;
+}
+header.header .hdr-top-bar .social-icn li:hover:after {
+    height: 100%;
+}
+header.header .hdr-top-bar .social-icn li:hover a {
+    color: #fff;
+}

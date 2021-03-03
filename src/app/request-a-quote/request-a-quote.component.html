@@ -1,0 +1,85 @@
+<div class="page-title aboutus-sec pt-4 pb-4 dark_bg" style="margin-top: 111px;">
+    <div class="container">
+       <h1><span>Request</span> a Quote</h1>
+    </div>
+</div>
+
+<div class="container padding-top-bottom-50">
+   <div class="row">
+      <div class="col-sm-6">
+         <div class="contact_form_right">
+            <form #userForm="ngForm" *ngIf="!submitted" (ngSubmit)="onSubmit(userForm.value)">
+               <div class="form-group">
+                  <label><i class="fa fa-user prefix"></i> Full Name</label>
+                  <input type="text" class="form-control" name="fullname" #nameRef="ngModel" required ngModel>
+                  <div [hidden]="nameRef.valid || nameRef.pristine" class="alert-danger">
+                     Please Enter a Name.
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label><i class="fa fa-envelope prefix"></i> Email Address</label>
+                  <input type="email" class="form-control" name="email" #emailRef="ngModel" required ngModel [email]="true">
+                  <div [hidden]="emailRef.valid || emailRef.pristine" class="alert-danger">
+                     Please Enter Valid Email Id.
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label><i class="fa fa-phone prefix"></i> Contact Number</label>
+                  <input type="text" class="form-control" name="mobile" [pattern]="'[789][0-9]{9}'" #phoneRef="ngModel" required ngModel  minlength="10" maxlength="10">
+                  <div [hidden]="phoneRef.valid || phoneRef.pristine" class="alert-danger">
+                     Please Enter Contact No.
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label><i class="fa fa-briefcase"></i> Business Name</label>
+                  <input type="text" class="form-control" name="business" #businessRef="ngModel" required ngModel>
+                  <div [hidden]="businessRef.valid || businessRef.pristine" class="alert-danger">
+                     Business Name is required.
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label><i class="fa fa-link"></i> Website URL</label>
+                  <input type="text" class="form-control" name="weburl" #urlRef="ngModel" ngModel>
+               </div>
+               <div class="contact_chkbox">
+                  <h2 class="mt-4">Area of interest:</h2>
+                  <div class="form-group multiple_select">
+                     <select name="area_of_interest" id="area_of_interest" multiple class="form-control"  #interestRef="ngModel" required ngModel>
+                        <option *ngFor="let valu of service_link" value="{{valu.name}}">{{valu.name}}</option>
+                     </select>
+                  </div>
+                  <div [hidden]="interestRef.valid || interestRef.pristine" class="alert-danger">
+                     Please Select Any Interest.
+                  </div>
+                  <div class="form-group form-check" (click)="toggle()" id="bt">
+                     <input type="checkbox" class="form-check-input" id="toggle">
+                     <label class="form-check-label" for="toggle" (click)="toggle()" id="bt">Other (Please specify)</label>
+                  </div>
+                  <ng-container *ngIf="show">
+                     <textarea class="form-control" name="interest9" rows="10" ngModel style="background: #f8f8f8;"></textarea>
+                  </ng-container>
+               </div>
+               <div class="text-center mt-5">
+                  <button [disabled]="!userForm.form.valid" type="submit" name="contactsubmit" class="btn btn-outline">Submit</button>
+                  <div class="call mt-3">
+                        <p>Or would you prefer to call? <br /><span><i class="fa fa-phone"></i> <a class="callc" *ngFor="let linkf of top_header_contact"href="{{linkf.field_for_type}}:{{linkf.field_header_email}}">{{linkf.field_header_email}}</a> </span></p>
+                  </div>
+               </div>
+            </form>
+            <div [hidden]="!submitted" class="contact-message text-center paragraph p-5">
+               <h2 class="alert alert-success">Successfully Submitted!</h2>
+               <p>An expert will get in touch with you shortly</p>
+               <a routerLink="/" class="btn btn-outline">Go to Home</a>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-6">
+         <img class="img-fluid" alt="quote" src="../assets/file/quote-1.svg">
+      </div>
+   </div>
+</div>
+
+
+
+
+<app-services-list></app-services-list>

@@ -1,0 +1,6 @@
+<div class="home-slider">
+    <particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>
+    <div *ngFor="let banner of homeBanner" [innerHTML]="banner.body"></div>
+    <div class="mask"></div>
+</div>
+<!-- <div id="ticker"></div> -->

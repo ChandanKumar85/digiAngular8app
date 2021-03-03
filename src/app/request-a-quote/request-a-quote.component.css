@@ -1,0 +1,14 @@
+.contact_chkbox h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.contact_chkbox label {
+    cursor: pointer;
+}
+
+.multiple_select select {
+    margin: 0;
+    padding: 0;
+}
+.multiple_select select option { padding: 5px 0;}

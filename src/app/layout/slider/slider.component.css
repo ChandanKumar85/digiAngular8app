@@ -1,0 +1,27 @@
+.home-slider { 
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.home-slider:before,
+.home-slider:after {
+    position: absolute;
+    content: "";
+    width: 55%;
+    height: 80px;
+    background: #eeeded;
+    bottom: -42px;
+    z-index: 99;
+}
+.home-slider:before {left: -3%; transform: rotate(5deg);}
+.home-slider:after { right: -3%; transform: rotate(-5deg);}
+.home-slider .mask {
+    background-color: rgba(0,0,0,.7);
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}

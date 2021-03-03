@@ -1,0 +1,173 @@
+<div class="cd-section" id="slider">
+    <app-slider></app-slider>
+</div>
+
+<div class="we-are-redefi gray-color padding-top-bottom-50 cd-section" id="sec-sec">
+    <div class="container full">
+        <div data-section="redefining-digital" class="animated wow fadeInLeft row content-work" id="sec-sec">
+            <div class="col-md-6">
+                <div class="images_circle">
+                    <img class="img-fluid" alt="Digitigi-work-circle" src="../assets/file/market-02.svg">
+                </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="images_content contect_head paragraph">
+                    <div *ngFor="let content of redefining_digital" [innerHTML]="content.body"></div>
+                    <a routerLink="/about-us" class="btn btn-outline">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="padding-top-bottom-50 cd-section" id="services">
+    <div class="container full">
+        <div class="row">
+            <div class="col-md-6 d-flex justify-content-center align-items-center contect_head_sec">
+                <h2 class="d-flex">WE<samp class="parent-box"><span class="inner_hd_top">LOVE</span><span class="inner_hd_bottom">TO DO</span></samp></h2>
+            </div>
+            <div class="col-md-6">
+                <div class="service_top">
+                    <ul>
+                        <li *ngFor="let linktxt of what_to_do">
+                            <h3 [innerHTML]="linktxt.field_service_heading"></h3>
+                            <a [routerLink]="[linktxt.view_taxonomy_term]" class="btn btn-outline">Learn More</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="gray-color padding-top-bottom-50 cd-section" id="Who">
+    <div class="container full">
+        <div class="row">
+            <div class="col-md-5">
+                <img class="img-fluid" alt="Digital Marketing Process" src="../assets/file/nj-01.svg">
+            </div>
+            <div class="col-md-7 d-flex align-items-center">
+                <div class="contect_head paragraph">
+                    <div *ngFor="let content of our_methodology" [innerHTML]="content.body"></div>
+                    <a routerLink="/methodology" class="btn btn-outline">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="padding-top-bottom-50 cd-section" id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 home_digitigians paragraph" *ngFor="let content of top_digitigian" [innerHTML]="content.body"></div>
+        </div>
+    </div>
+    <div class="container full">
+        <div class="row profile mt-4">
+            <div class="col-6 col-sm-3 col-md-3 col-lg-2 mb-4" *ngFor="let team of our_team_persion">
+                <figure><img src="{{team.field_our_team_image}}" width="192" height="231" class="img-fluid" alt="{{team.name}}"></figure>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 paragraph" *ngFor="let content of bottom_digitigian" [innerHTML]="content.body"></div>
+        </div>
+    </div>
+</div>
+<div class="container winning-strokes">
+    <h2>Our Winning Strokes</h2>
+</div>
+<div class="gray-color padding-top-bottom-50 cd-section" id="usp-mo">
+    <div class="container">
+        <div class="row winning">
+            <div class="col-md-4 col-lg-4 d-flex align-items-stretch" *ngFor="let winning of our_winning_strokes">
+                <section class="card">
+                    <figure>
+                        <img alt="CARS" src="{{winning.field_our_winning_image}}" width="640" height="426" class="img-fluid">
+                    </figure>
+                    <div class="bodySec">
+                        <h3>{{winning.name}}</h3>
+                        <div [innerHTML]="winning.description__value"></div>
+                        <a routerLink="{{winning.field_link_field}}" class="btn btn-outline">Read more about our SEO services</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="dark_bg cd-section" id="Why-customer">
+    <img class="img-fluid" alt="Steps to success" src="../assets/file/cdf.svg">
+</div>
+
+<div class="padding-top-bottom-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center paragraph">
+                <h2>Testimonials</h2>
+                <owl-carousel [options]="mySlideOptions" [items]="testimonials" [carouselClasses]="['owl-theme', 'sliding']">
+                    <div class="item" *ngFor="let testimonial of testimonials">
+                        <div class="testimonial">
+                            <div class="avatar text-center">
+                                <img src="{{testimonial.field_testimonials_image}}" width="400" height="400" class="img-fluid rounded_circle" alt="Ujjwal">
+                            </div>
+                            <div [innerHTML]="testimonial.description__value"></div>
+                            <h3>{{testimonial.field_testimonials_client_name}}</h3>
+                            <h4>{{testimonial.field_testimonials_client_design}}</h4>
+                            <div class="text-center">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </owl-carousel>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="sidebar">
+    <nav id="cd-vertical-nav">
+        <ul>
+            <li>
+                <a href="#slider" (click)="scrollTOElement('#slider',-50,1000)" data-number="1" class="dot"></a>
+                <span>Why digitigi?</span>
+            </li>
+            <li>
+                <a href="#sec-sec" (click)="scrollTOElement('#sec-sec',-50,1000)" data-number="2" class="dot"></a>
+                <span>Who are we?</span>
+            </li>
+            <li>
+                <a href="#services" (click)="scrollTOElement('#services',-50,1000)" data-number="3" class="dot"></a>
+                <span>What we do?</span>
+            </li>
+            <li>
+                <a href="#Who" (click)="scrollTOElement('#Who',-50,1000)" data-number="4" class="dot"></a>
+                <span>How we work?</span>
+            </li>
+            <li>
+                <a href="#portfolio" (click)="scrollTOElement('#portfolio',-50,1000)" data-number="5" class="dot"></a>
+                <span>Success stories</span>
+            </li>
+            <li>
+                <a href="#usp-mo" (click)="scrollTOElement('#usp-mo',-50,1000)" data-number="6" class="dot"></a>
+                <span>Our USP</span>
+            </li>
+            <li>
+                <a href="#Why-customer" (click)="scrollTOElement('#Why-customer',-50,1000)" data-number="7" class="dot"></a>
+                <span>Why customer love us?</span>
+            </li>
+            <li>
+                <a href="#contact-mo" (click)="scrollTOElement('#contact-mo',-50,1000)" data-number="8" class="dot"></a>
+                <span>Contact us</span>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<!-- tooltip="What we do?" placement="top" show-delay="500" -->

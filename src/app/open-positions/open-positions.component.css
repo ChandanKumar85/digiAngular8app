@@ -1,0 +1,9 @@
+.job_description .top_box { 
+    display: flex; 
+    flex-flow: column; 
+    align-items: center;
+    margin-bottom: 30px;
+}
+.shadow_new {
+    box-shadow: 0 0 1rem rgba(0,0,0,.15)!important;
+}

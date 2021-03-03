@@ -1,0 +1,133 @@
+<div *ngFor="let content of services">
+    <div class="page-title aboutus-sec pt-4 pb-4 dark_bg" style="margin-top: 111px;">
+        <div class="container" [innerHTML]="content.field_detail_page_heading"></div>
+    </div>
+
+    <div class="container padding-top-bottom-50 pb-0">
+        <div class="row">       
+            <div class="col-sm-7 d-flex align-items-center paragraph heading-top">
+                <div>
+                    <div [innerHTML]="content.field_detail_page_top_para"></div>
+                    <a routerLink="{{content.field_top_para_link}}" class="btn btn-outline getVal" rel="{{content.name}}">Request a Quote</a>
+                </div>
+            </div> 
+            <div class="col-sm-5 d-flex justify-content-center align-items-start detail_img">
+                <img class="img-fluid" width="" height="" alt="Team" src="{{content.field_top_para_side_image}}">
+            </div>  
+        </div>
+    </div>
+
+    <div class="padding-top-bottom-50 pb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 home_digitigians paragraph" [innerHTML]="content.field_top_bottom_paragraph"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="parallax-s-about padding-top-bottom-50 pb-3" *ngIf="content.field_multi_tab" [style.backgroundImage]="'url('+ content.field_select_tab_bg_image +')'">
+        <div class="parallax-social-services" [innerHTML]="content.field_multi_tab"></div>
+        <div class="text-center mt-3">
+            <a class="btn btn-outline text-uppercase getVal" rel="{{content.name}}" routerLink="{{content.field_tab_bottom_link}}">{{content.field_tab_bottom_link_1}}</a>
+        </div>
+    </div> -->
+
+    <div class="padding-top-bottom-50 pb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 home_digitigians paragraph heading-top" [innerHTML]="content.field_bottom_page_detail_para"></div>
+            </div>
+        </div>
+    </div>
+
+<!-- <div class="padding-top-bottom-50 pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 carslider home_digitigians">
+                <h2 class="mt-5">Our Winning Strokes</h2>
+                <owl-carousel [options]="mySlideOptions" [items]="sliders" [carouselClasses]="['owl-theme', 'sliding']">
+                    <div class="item">
+                        <a href="#" target="_blank">
+                            <figure class="card p-2">
+                                <img alt="Parsoli Motors" src="../assets/file/img_17.png" width="1347" height="701" class="img-fluid">
+                                <figcaption>Parsoli Motors</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" target="_blank">
+                            <figure class="card p-2">
+                                <img alt="Parsoli Motors" src="../assets/file/img_17.png" width="1347" height="701" class="img-fluid">
+                                <figcaption>Parsoli Motors</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" target="_blank">
+                            <figure class="card p-2">
+                                <img alt="Parsoli Motors" src="../assets/file/img_17.png" width="1347" height="701" class="img-fluid">
+                                <figcaption>Parsoli Motors</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" target="_blank">
+                            <figure class="card p-2">
+                                <img alt="Parsoli Motors" src="../assets/file/img_17.png" width="1347" height="701" class="img-fluid">
+                                <figcaption>Parsoli Motors</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" target="_blank">
+                            <figure class="card p-2">
+                                <img alt="Parsoli Motors" src="../assets/file/img_17.png" width="1347" height="701" class="img-fluid">
+                                <figcaption>Parsoli Motors</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </owl-carousel>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+    <div class="padding-top-bottom-50 page_footer dark_bg mt-5">
+        <div class="container text-center">
+            <h5 [innerHTML]="content.field_footer_top_text_1"></h5>
+            <h5><a routerLink="/request-a-quote">Click here </a> <span [innerHTML]="content.field_footer_top_text_2"></span></h5>
+            <a routerLink="/contact-us" class="btn btn-outline mt-3">Contact Us</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- <input type="hidden" #selection>
+<div class="card-container d-flex justify-content-between">
+<div class="card card-small" (click)="selection.value = 'component'" tabindex="0">  
+<span>New Component</span>
+</div>
+
+<div class="card card-small" (click)="selection.value = 'material'" tabindex="0"> 
+<span>Angular Material</span>
+</div>
+
+<div class="card card-small" (click)="selection.value = 'dependency'" tabindex="0">  
+<span>Add Dependency</span>
+</div>
+
+<div class="card card-small" (click)="selection.value = 'test'" tabindex="0"> 
+<span>Run and Watch Tests</span>
+</div>
+
+<div class="card card-small" (click)="selection.value = 'build'" tabindex="0">  
+<span>Build for Production</span>
+</div>
+</div>
+<div class="terminal" [ngSwitch]="selection.value">
+<pre *ngSwitchDefault>ng generate component xyz</pre>
+<pre *ngSwitchCase="'material'">ng add @angular/material</pre>
+<pre *ngSwitchCase="'dependency'">ng add _____</pre>
+<pre *ngSwitchCase="'test'">ng test</pre>
+<pre *ngSwitchCase="'build'">ng build --prod</pre>
+</div> -->

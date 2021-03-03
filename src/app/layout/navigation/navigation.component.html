@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-sm navi">
+    <div class="container d-flex justify-content-between">
+       <a class="navbar-brand" routerLink="/"><img src="../assets/images/logo.svg" class="img-fluid logo" alt="Digitigi Technologies"></a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample" aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse flex-grow-unset" id="navbarsExample">
+          <ul class="navbar-nav mr-auto">
+             <li class="nav-item"><a class="nav-link active" routerLink="/request-a-quote">Request a Quote</a></li>
+             <li class="nav-item">
+                <a class="nav-link dropdown-toggle" routerLink="/about-us">About us</a>
+                <ul class="dropdown-menu shadow">
+                   <li class="nav-item"><a class="dropdown-item" routerLink="/methodology">Methodology</a></li>
+                   <li class="nav-item"><a class="dropdown-item" routerLink="/our-team">Our Team</a></li>
+                </ul>
+             </li>
+             <li class="nav-item">
+                <a class="nav-link" routerLink="/services">Services</a>
+                <!-- dropdown-toggle  (click)="onSave($event)"-->
+                <!-- <ul class="dropdown-menu shadow">
+                  <li class="nav-item" *ngFor="let linktxt of navig">
+                     <a class="dropdown-item" routerLink="{{linktxt.view_taxonomy_term}}">{{linktxt.name}}</a>
+                  </li>
+                </ul> -->
+             </li>
+             <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" routerLink="/careers">Careers</a>
+                <ul class="dropdown-menu shadow">
+                   <li class="nav-item"><a class="dropdown-item" routerLink="/open-positions">Open Positions</a></li>
+                </ul>
+             </li>
+             <li class="nav-item"><a class="nav-link" routerLink="/contact-us">Contact</a></li>
+          </ul>
+       </div>
+    </div>
+ </nav>

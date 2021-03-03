@@ -1,0 +1,59 @@
+<footer class="footer cd-section" id="contact-mo">
+    <div class="container-fluid p-0 gray-color">
+        <div class="row ml-0 mr-0">
+            <div class="col-sm-7 d-flex align-items-center twitter_area">
+                <i class="fa fa-twitter"></i>
+                <ul class="social_icon">
+                    <li>
+                        <h4>Want to attract more traffic and more leads to your website? <a href="https://twitter.com/wearedigitigi" target="_blank"><span style="color: red">@wearedigitigi</span></a></h4>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-5 p-0 twitter_head">
+                <h3><a href="https://twitter.com/wearedigitigi" target="blank">
+                    <i class="fa fa-twitter"></i>
+                    FOLLOW US ON TWITTER</a></h3>
+            </div>
+        </div>
+    </div>
+    <div class="footer_main dark_bg_footer">
+        <div class="container">
+            <div class="row widget_nav_menu">
+                <div class="col-sm-3">
+                    <h6 class="title-widget">ABOUT US</h6>
+                    <ul data-value="about-menu" class="menubb">
+                        <li class="hvr-underline-from-left-footer" *ngFor="let menu of foo_about"><a routerLink="{{menu.link__uri}}"><i class="fa fa-angle-double-right"></i> {{menu.title}}</a></li>
+                    </ul>
+                    <h6 class="title-widget">COMMUNITY</h6>
+                    <ul data-value="about-menu" class="menubb">
+                        <!-- <li class="hvr-underline-from-left-footer" *ngFor="let menu of foo_blog"><a routerLink="{{menu.link__uri}}"><i class="fa fa-angle-double-right"></i> {{menu.title}}</a></li> -->
+                        <li class="hvr-underline-from-left-footer"><a target="_blank" href="https:/www.digitigi.com/blog"><i class="fa fa-angle-double-right"></i> BLOG</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h6 class="title-widget">SERVICES</h6>
+                    <ul data-value="service-menu" class="menubb">
+                        <li class="hvr-underline-from-left-footer" *ngFor="let menu of foo_serv"><a routerLink="{{menu.link__uri}}"><i class="fa fa-angle-double-right"></i> {{menu.title}}</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h6 class="title-widget">CONTACT US</h6>
+                    <address *ngFor="let cont of foo_contD" [innerHTML]="cont.body"></address>
+                </div>
+                <div class="col-sm-3">
+                    <h6 class="title-widget">FOLLOW US</h6>
+                    <div *ngFor="let cont of foo_follow" [innerHTML]="cont.body"></div>
+                    <form>
+                        <input class="form-control" name="emailus" id="emailus" placeholder="Enter your email address" type="text">
+                        <button type="submit" name="subscribe" class="btn subscribe-btn">Subscribe Now</button>
+                    </form>
+                    <ul class="list-unstyled list-inline social-icn m-0 d-flex">
+                        <li *ngFor="let linkf of social_media" class="{{linkf.field_icon_class_name}}"><a href="{{linkf.field_social_media_url}}" target="_blank"><i class="fa fa-{{linkf.field_icon_class_name}}"></i></a></li>
+                        <li class="glassdor"><a data-value="glassdoor-review-link" href="https://www.glassdoor.co.in/Reviews/Digitigi-Reviews-E1651886.htm" target="_blank"><img alt="Glassdoor-logo-icon" src="../assets/images/glassdoor.svg"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom" *ngFor="let cont of foo_all_right" [innerHTML]="cont.body"></div>
+</footer>

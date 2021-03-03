@@ -1,0 +1,25 @@
+<div class="container padding-top-bottom-50 d-flex justify-content-between justify-content-center flex-wrap">
+  <div class="flip-card" *ngFor="let linktxt of what_to_do">
+      <div class="flip-card-inner">
+        <div class="flip-card-front d-flex justify-content-center align-items-center">
+          <div class="paragraph">
+              <img src="{{linktxt.field_service_image_icon}}" width="" height="" class="img-thumbnail" alt="{{linktxt.name}}">
+              <h2>{{linktxt.name}}</h2>
+              <div [innerHTML]="linktxt.description__value"></div>
+          </div>
+        </div>
+        <div class="flip-card-back d-flex justify-content-center align-items-center"
+         [style.background-color]="linktxt.field_service_box_color">
+          <div>
+            <div [innerHTML]="linktxt.field_service_points"></div>
+            <a [routerLink]="[linktxt.view_taxonomy_term]" class="btn btn-outline text-uppercase">Read more</a>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- [ngStyle]="{'background-color': bgColor}" -->
+
+<!-- {{linktxt.field_service_box_color}} -->
+

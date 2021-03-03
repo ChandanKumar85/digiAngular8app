@@ -1,0 +1,7 @@
+<div class="padding-top-bottom-50 page_footer dark_bg">
+    <div class="container text-center">
+        <div *ngFor="let footer_top of footer_top_link" [innerHTML]="footer_top.body"></div>
+        <h5><a routerLink="/request-a-quote">Click here</a> for free digital consultation</h5>
+        <a routerLink="/contact-us" class="btn btn-outline mt-3">Contact Us</a>
+    </div>
+</div>
